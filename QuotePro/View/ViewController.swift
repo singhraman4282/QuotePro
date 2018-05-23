@@ -15,7 +15,8 @@ class ViewController: UIViewController, QuoteProtocol, PhotoProtocol {
     
     @IBOutlet var imageView: UIImageView!
     
-    @IBOutlet var quoteLabel: UILabel!
+    @IBOutlet var quoteLabel: shadowText!
+    
     
     let networkManager = NetworkManager()
     var photoIndex = 0
@@ -33,13 +34,7 @@ class ViewController: UIViewController, QuoteProtocol, PhotoProtocol {
     
     
     func addQuote(quote:Quote) {
-        
         quoteLabel.text = quote.quoteText + " - " + quote.quoteAuthor
-        quoteLabel.layer.shadowOpacity = 1.0;
-        quoteLabel.layer.shadowRadius = 5.0;
-        quoteLabel.layer.shadowColor = UIColor.black.cgColor
-        quoteLabel.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        
     }
     
     func updatePhoto(photo:UIImage) {

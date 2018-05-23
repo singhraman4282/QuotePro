@@ -67,7 +67,7 @@
                                     <constraint firstItem="Dxc-eg-jcc" firstAttribute="width" secondItem="ErB-KL-kiM" secondAttribute="width" id="IdR-gd-EKl"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYD-cT-gTo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYD-cT-gTo" customClass="shadowText" customModule="QuotePro" customModuleProvider="target">
                                 <rect key="frame" x="-0.5" y="116.5" width="375" height="375"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="24"/>
                                 <color key="textColor" red="0.98368837819999999" green="0.99995478550000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -91,27 +91,81 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="kab-dc-kWW" id="5x0-jt-MPm"/>
-                        <outlet property="quoteLabel" destination="KYD-cT-gTo" id="XMV-8M-cNb"/>
+                        <outlet property="quoteLabel" destination="KYD-cT-gTo" id="aGt-6K-HmO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2521" y="54"/>
         </scene>
-        <!--Realm Experiment View Controller-->
+        <!--Show Quote View Controller-->
         <scene sceneID="WvG-NN-dlR">
             <objects>
-                <viewController id="wB1-kF-U94" customClass="RealmExperimentViewController" customModule="QuotePro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wB1-kF-U94" customClass="ShowQuoteViewController" customModule="QuotePro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aaL-B4-N1E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5V-KL-soR">
+                                <rect key="frame" x="20" y="551" width="335" height="30"/>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.75686274509999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HD0-IN-szS"/>
+                                </constraints>
+                                <state key="normal" title="Take ScreenShot"/>
+                                <connections>
+                                    <action selector="takeScreenshot:" destination="wB1-kF-U94" eventType="touchUpInside" id="tDp-je-Jzw"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zx7-x5-jcG">
+                                <rect key="frame" x="0.0" y="116" width="375" height="375"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HIO-ff-113">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="HIO-ff-113" secondAttribute="height" multiplier="1:1" id="rAO-95-bGJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fI8-y6-KE2" customClass="shadowText" customModule="QuotePro" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.98368837819999999" green="0.99995478550000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="fI8-y6-KE2" firstAttribute="centerX" secondItem="HIO-ff-113" secondAttribute="centerX" id="6vR-de-bPl"/>
+                                    <constraint firstAttribute="width" secondItem="Zx7-x5-jcG" secondAttribute="height" multiplier="1:1" id="7QM-bd-eGr"/>
+                                    <constraint firstAttribute="trailing" secondItem="HIO-ff-113" secondAttribute="trailing" id="Ktb-OS-acz"/>
+                                    <constraint firstItem="fI8-y6-KE2" firstAttribute="centerY" secondItem="HIO-ff-113" secondAttribute="centerY" id="Uns-z9-akH"/>
+                                    <constraint firstItem="HIO-ff-113" firstAttribute="top" secondItem="Zx7-x5-jcG" secondAttribute="top" id="cM4-dZ-IQQ"/>
+                                    <constraint firstItem="fI8-y6-KE2" firstAttribute="width" secondItem="HIO-ff-113" secondAttribute="width" id="csH-4D-o1N"/>
+                                    <constraint firstItem="fI8-y6-KE2" firstAttribute="height" secondItem="HIO-ff-113" secondAttribute="height" id="gaS-26-LPN"/>
+                                    <constraint firstItem="HIO-ff-113" firstAttribute="leading" secondItem="Zx7-x5-jcG" secondAttribute="leading" id="pC8-DA-doH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Vsu-XB-mTe" firstAttribute="trailing" secondItem="W5V-KL-soR" secondAttribute="trailing" constant="20" id="fWc-ZE-Gwy"/>
+                            <constraint firstItem="W5V-KL-soR" firstAttribute="top" secondItem="Zx7-x5-jcG" secondAttribute="bottom" constant="60" id="fdR-yn-tcF"/>
+                            <constraint firstItem="Zx7-x5-jcG" firstAttribute="top" secondItem="Vsu-XB-mTe" secondAttribute="top" id="jZ1-0C-hbw"/>
+                            <constraint firstItem="W5V-KL-soR" firstAttribute="leading" secondItem="Vsu-XB-mTe" secondAttribute="leading" constant="20" id="lts-4Q-ny7"/>
+                            <constraint firstItem="Zx7-x5-jcG" firstAttribute="trailing" secondItem="Vsu-XB-mTe" secondAttribute="trailing" id="w1h-Tw-XJD"/>
+                            <constraint firstItem="Zx7-x5-jcG" firstAttribute="leading" secondItem="Vsu-XB-mTe" secondAttribute="leading" id="zFc-TG-TYI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Vsu-XB-mTe"/>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="Zx7-x5-jcG" id="Z5g-Sv-89w"/>
+                        <outlet property="imageView" destination="HIO-ff-113" id="Ot1-td-RUU"/>
+                        <outlet property="quoteLabel" destination="fI8-y6-KE2" id="eCk-AC-R3B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b02-4Z-YVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3394" y="593"/>
+            <point key="canvasLocation" x="2237.5999999999999" y="828.93553223388312"/>
         </scene>
         <!--My Quotes-->
         <scene sceneID="BEs-cr-Xrf">
@@ -158,6 +212,7 @@
                                         <connections>
                                             <outlet property="cellImageView" destination="uVL-Cu-yZn" id="ECq-9d-MS4"/>
                                             <outlet property="cellLabel" destination="6jL-zv-xgy" id="e6g-Gw-sXM"/>
+                                            <segue destination="wB1-kF-U94" kind="show" identifier="showQuote" id="eTq-nW-bHo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

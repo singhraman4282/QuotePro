@@ -15,11 +15,13 @@ class SavedQuotesViewController: UIViewController, UITableViewDelegate, UITableV
     
     var savedQuotes: Results<QuotePhoto>!
     let realm = try! Realm()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         savedQuotes = realm.objects(QuotePhoto.self)
         tableView.reloadData()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,6 +39,18 @@ class SavedQuotesViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showQuote" {
+            
+            guard let quoteCell = sender as? QuoteCell, let indexPath = tableView.indexPath(for: quoteCell) else {
+                return
+            }
+            
+            if let sqvc:ShowQuoteViewController = segue.destination as? ShowQuoteViewController {
+                sqvc.recievedQuote = savedQuotes[indexPath.row]
+            }
+        }
+     }//prepareForSegur
 
 
-}
+}//end
