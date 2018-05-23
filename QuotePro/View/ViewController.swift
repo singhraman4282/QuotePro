@@ -7,42 +7,33 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 
-protocol QuoteAndPhotoProtocol {
-    func addQuoteAndPhoto(quoteAndPhoto:QuotePhoto)
-}
 
 class ViewController: UIViewController, QuoteProtocol, PhotoProtocol {
-
+    
     @IBOutlet var imageView: UIImageView!
-    var photoIndex = 0
     
     @IBOutlet var quoteLabel: UILabel!
+    
     let networkManager = NetworkManager()
-    
-    var delegate:QuoteAndPhotoProtocol!
-    
-    
-    
+    var photoIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         networkManager.downloadQuote()
         networkManager.quoteDelegate = self
         networkManager.downloadPhoto(index: photoIndex)
         networkManager.photoDelegate = self
         photoIndex += 1
-       
-
-    }
-
+        
+    }//load
     
-
     
     func addQuote(quote:Quote) {
-
+        
         quoteLabel.text = quote.quoteText + " - " + quote.quoteAuthor
         quoteLabel.layer.shadowOpacity = 1.0;
         quoteLabel.layer.shadowRadius = 5.0;
@@ -63,30 +54,36 @@ class ViewController: UIViewController, QuoteProtocol, PhotoProtocol {
     }//newQuote
     
     @IBAction func newPhoto(_ sender: Any) {
-    
+        
         networkManager.downloadPhoto(index: photoIndex)
         networkManager.photoDelegate = self
         photoIndex += 1
         if photoIndex > 99 {
             photoIndex = 0
         }
-    
+        
     }//newPhoto
     
     @IBAction func save(_ sender: UIButton) {
         
         let quotePhotoObject = QuotePhoto()
         quotePhotoObject.quote = quoteLabel.text!
-        quotePhotoObject.photo = imageView.image!
         
-        self.delegate.addQuoteAndPhoto(quoteAndPhoto: quotePhotoObject)
+        let imageData: NSData = UIImagePNGRepresentation(imageView.image!)! as NSData
         
-    }
+        quotePhotoObject.photo = imageData as Data?
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(quotePhotoObject)
+        }
+        
+    }//save
     
     
     
     
     
-
+    
 }
 

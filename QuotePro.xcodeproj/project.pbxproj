@@ -9,7 +9,13 @@
 /* Begin PBXBuildFile section */
 		F19FFB5120B5B33300D71C8D /* QuotePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19FFB5020B5B33300D71C8D /* QuotePhoto.swift */; };
 		F19FFB5720B5B68A00D71C8D /* SavedQuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19FFB5620B5B68A00D71C8D /* SavedQuotesViewController.swift */; };
-		F19FFB5920B5B75200D71C8D /* QuoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19FFB5820B5B75200D71C8D /* QuoteCell.swift */; };
+		F19FFB5F20B5E8BC00D71C8D /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19FFB5E20B5E8BC00D71C8D /* CustomCell.swift */; };
+		F19FFB6120B5EA7600D71C8D /* QuoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19FFB6020B5EA7600D71C8D /* QuoteCell.swift */; };
+		F19FFB6520B5EC9600D71C8D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19FFB6320B5EC9500D71C8D /* RealmSwift.framework */; };
+		F19FFB6720B5ECBB00D71C8D /* RealmExperimentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19FFB6620B5ECBB00D71C8D /* RealmExperimentViewController.swift */; };
+		F19FFB6820B5ED9100D71C8D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19FFB6220B5EC9500D71C8D /* Realm.framework */; };
+		F19FFB6920B5ED9100D71C8D /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F19FFB6220B5EC9500D71C8D /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F19FFB6B20B5ED9100D71C8D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F19FFB6320B5EC9500D71C8D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F1A4FC3420B49EB3007A7DF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A4FC3320B49EB3007A7DF5 /* AppDelegate.swift */; };
 		F1A4FC3620B49EB3007A7DF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A4FC3520B49EB3007A7DF5 /* ViewController.swift */; };
 		F1A4FC3920B49EB3007A7DF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1A4FC3720B49EB3007A7DF5 /* Main.storyboard */; };
@@ -20,10 +26,29 @@
 		F1A4FC4A20B4A083007A7DF5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A4FC4920B4A083007A7DF5 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F19FFB6C20B5ED9200D71C8D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F19FFB6B20B5ED9100D71C8D /* RealmSwift.framework in Embed Frameworks */,
+				F19FFB6920B5ED9100D71C8D /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		F19FFB5020B5B33300D71C8D /* QuotePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotePhoto.swift; sourceTree = "<group>"; };
 		F19FFB5620B5B68A00D71C8D /* SavedQuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedQuotesViewController.swift; sourceTree = "<group>"; };
-		F19FFB5820B5B75200D71C8D /* QuoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCell.swift; sourceTree = "<group>"; };
+		F19FFB5E20B5E8BC00D71C8D /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		F19FFB6020B5EA7600D71C8D /* QuoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteCell.swift; sourceTree = "<group>"; };
+		F19FFB6220B5EC9500D71C8D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		F19FFB6320B5EC9500D71C8D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		F19FFB6620B5ECBB00D71C8D /* RealmExperimentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmExperimentViewController.swift; sourceTree = "<group>"; };
 		F1A4FC3020B49EB3007A7DF5 /* QuotePro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuotePro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A4FC3320B49EB3007A7DF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1A4FC3520B49EB3007A7DF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F19FFB6820B5ED9100D71C8D /* Realm.framework in Frameworks */,
+				F19FFB6520B5EC9600D71C8D /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +90,9 @@
 				F1A4FC3520B49EB3007A7DF5 /* ViewController.swift */,
 				F19FFB5620B5B68A00D71C8D /* SavedQuotesViewController.swift */,
 				F1A4FC3720B49EB3007A7DF5 /* Main.storyboard */,
-				F19FFB5820B5B75200D71C8D /* QuoteCell.swift */,
+				F19FFB6620B5ECBB00D71C8D /* RealmExperimentViewController.swift */,
+				F19FFB6020B5EA7600D71C8D /* QuoteCell.swift */,
+				F19FFB5E20B5E8BC00D71C8D /* CustomCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -79,6 +108,8 @@
 		F19FFB5520B5B58000D71C8D /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				F19FFB6220B5EC9500D71C8D /* Realm.framework */,
+				F19FFB6320B5EC9500D71C8D /* RealmSwift.framework */,
 				F1A4FC3F20B49EB5007A7DF5 /* Info.plist */,
 				F1A4FC3320B49EB3007A7DF5 /* AppDelegate.swift */,
 				F1A4FC3A20B49EB5007A7DF5 /* Assets.xcassets */,
@@ -124,6 +155,7 @@
 				F1A4FC2C20B49EB3007A7DF5 /* Sources */,
 				F1A4FC2D20B49EB3007A7DF5 /* Frameworks */,
 				F1A4FC2E20B49EB3007A7DF5 /* Resources */,
+				F19FFB6C20B5ED9200D71C8D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,9 +217,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F19FFB5920B5B75200D71C8D /* QuoteCell.swift in Sources */,
 				F1A4FC4820B4A07A007A7DF5 /* Quote.swift in Sources */,
+				F19FFB5F20B5E8BC00D71C8D /* CustomCell.swift in Sources */,
 				F1A4FC3620B49EB3007A7DF5 /* ViewController.swift in Sources */,
+				F19FFB6720B5ECBB00D71C8D /* RealmExperimentViewController.swift in Sources */,
+				F19FFB6120B5EA7600D71C8D /* QuoteCell.swift in Sources */,
 				F1A4FC3420B49EB3007A7DF5 /* AppDelegate.swift in Sources */,
 				F19FFB5720B5B68A00D71C8D /* SavedQuotesViewController.swift in Sources */,
 				F1A4FC4620B49EF4007A7DF5 /* NetworkManager.swift in Sources */,
@@ -338,6 +372,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UE52HE9BWK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QuotePro/SupportingFiles",
+				);
 				INFOPLIST_FILE = QuotePro/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -356,6 +394,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UE52HE9BWK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QuotePro/SupportingFiles",
+				);
 				INFOPLIST_FILE = QuotePro/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

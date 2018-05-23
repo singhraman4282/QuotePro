@@ -28,7 +28,9 @@ class QuoteCell: UITableViewCell {
     
     func setupCell(_with quoteAndPhoto:QuotePhoto) {
         
-        cellImageView.image = quoteAndPhoto.photo
+//        cellImageView.image = quoteAndPhoto.photo
+        cellImageView.image = UIImage(data:quoteAndPhoto.photo,scale:1.0)
+        
         cellLabel.text = quoteAndPhoto.quote
         
     }

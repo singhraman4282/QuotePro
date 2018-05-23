@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
+import Realm
 
-class QuotePhoto: NSObject {
+class QuotePhoto: Object {
+    
 
-    var quote:String!
-    var photo:UIImage!
+    @objc dynamic var quote:String!
+    @objc dynamic var photo: Data!
     
 }

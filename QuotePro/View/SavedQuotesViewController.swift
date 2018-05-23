@@ -7,17 +7,19 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 
-class SavedQuotesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, QuoteAndPhotoProtocol {
+class SavedQuotesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var tableView: UITableView!
     
-    var savedQuotes:[QuotePhoto] = []
-
+    var savedQuotes: Results<QuotePhoto>!
+    let realm = try! Realm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        savedQuotes = realm.objects(QuotePhoto.self)
         tableView.reloadData()
-       
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,25 +33,8 @@ class SavedQuotesViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:QuoteCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! QuoteCell
-        
         cell.setupCell(_with: savedQuotes[indexPath.row])
-        
         return cell
-    }
-    
-    func addQuoteAndPhoto(quoteAndPhoto:QuotePhoto) {
-        
-        savedQuotes.append(quoteAndPhoto)
-        tableView.reloadData()
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addQuote" {
-            if let qvc:ViewController = segue.destination as! ViewController {
-                qvc.delegate = self
-            }
-        }
     }
     
 
